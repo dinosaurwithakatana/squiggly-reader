@@ -1,0 +1,107 @@
+buildscript {
+    ext.buildConfig = [
+      'compileSdk': 28,
+      'minSdk': 21,
+      'targetSdk': 28,
+
+      'version': [
+          'major': 0,
+          'minor': 0,
+          'patch': 1,
+          'build': 0,
+      ],
+  ]
+
+  ext.buildConfig.version['name'] = "${buildConfig.version.major}.${buildConfig.version.minor}.${buildConfig.version.patch}"
+  ext.buildConfig.version['code'] = buildConfig.version.major * 1000000 + buildConfig.version.minor * 10000 + buildConfig.version.patch * 100 + buildConfig.version.build
+
+  ext.versions = [
+      'android': [
+          'gradlePlugin': "3.2.0-alpha18"
+      ],
+      'androidx': [
+          'appcompat':'1.0.0-alpha1',
+          'lifecycle': '2.0.0-alpha1',
+          'navigation': '1.0.0-alpha02',
+          'paging': '2.0.0-alpha1',
+          'room': '2.0.0-alpha1',
+          'workManager': '1.0.0-alpha02'
+      ],
+      'dagger': '2.16',
+      'kotlin': '1.2.50',
+      'moshi': '1.6.0',
+      'threetenabp': '1.1.0',
+      'retrofit': '2.4.0'
+  ]
+
+  ext.deps = [
+      'android': [
+          'gradlePlugin': "com.android.tools.build:gradle:${versions.android.gradlePlugin}"
+      ],
+      'androidx': [
+          'appcompat': "androidx.appcompat:appcompat:${versions.androidx.appcompat}",
+          'navigation': [
+              'fragment': "android.arch.navigation:navigation-fragment-ktx:${versions.androidx.navigation}",
+              'safeArgs': "android.arch.navigation:navigation-safe-args-gradle-plugin:${versions.androidx.navigation}",
+              'ui': "android.arch.navigation:navigation-ui-ktx:${versions.androidx.navigation}"
+          ],
+          'paging': [
+              'runtime': "androidx.paging:paging-runtime:${versions.paging}",
+              'rxjava': "androidx.paging:paging-rxjava2:${versions.paging}"
+          ],
+          'room': [
+              'compiler': "androidx.room:room-compiler:${versions.androidx.room}",
+              'runtime': "androidx.room:room-runtime:${versions.androidx.room}",
+              'rxjava': "androidx.room:room-rxjava2:${versions.androidx.room}"
+          ],
+          'viewModel': [
+              'compiler': "androidx.lifecycle:lifecycle-compiler:${versions.androidx.lifecycle}",
+              'extensions': "androidx.lifecycle:lifecycle-extensions:${versions.androidx.lifecycle}"
+          ],
+          'workManager': "android.arch.work:work-runtime-ktx:${versions.workManager}"
+      ],
+      'dagger': [
+          'lib': "com.google.dagger:dagger:${versions.dagger}",
+          'compiler': "com.google.dagger:dagger-compiler:${versions.dagger}",
+          'android': "com.google.dagger:dagger-android-support:${versions.dagger}",
+          'androidProcessor': "com.google.dagger:dagger-android-processor:${versions.dagger}"
+      ],
+      'kotlin': [
+          'gradlePlugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
+          'stdlib': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+      ],
+      'moshi': [
+          'lib': "com.squareup.moshi:moshi:${versions.moshi}",
+          'kotlinCodegen': "com.squareup.moshi:moshi-kotlin-codegen:${versions.moshi}"
+      ],
+      'threetenabp': "com.jakewharton.threetenabp:threetenabp:${versions.threetenabp}",
+      'retrofit': [
+          'lib': "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+          'moshi': "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
+          'rxjava': "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
+      ]
+  ]
+
+  repositories {
+    google()
+    jcenter()
+  }
+
+  dependencies {
+    classpath deps.android.gradlePlugin
+    classpath deps.kotlin.gradlePlugin
+    classpath deps.androidx.navigation.safeArgs
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+    jcenter()
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
