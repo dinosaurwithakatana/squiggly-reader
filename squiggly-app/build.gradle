@@ -22,7 +22,7 @@ android {
 }
 
 dependencies {
-  implementation project(':squigglydata')
+  implementation project(':squiggly-data')
 
   implementation deps.androidx.appcompat
 
