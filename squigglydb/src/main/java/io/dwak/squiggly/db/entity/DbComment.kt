@@ -13,6 +13,11 @@ import org.threeten.bp.Instant
           entity = DbStory::class,
           parentColumns = ["id"],
           childColumns = ["storyId"]
+      ),
+      ForeignKey(
+          entity = DbUser::class,
+          parentColumns = ["username"],
+          childColumns = ["poster"]
       )
     ]
 )
@@ -20,7 +25,7 @@ data class DbComment(
     @ColumnInfo(name = "storyId") val storyId: String,
 
     @PrimaryKey val id: String,
-    @ColumnInfo(name = "username") val username: String,
+    @ColumnInfo(name = "poster") val poster: String,
     @ColumnInfo(name = "postedTime") val postedTime: Instant,
     @ColumnInfo(name = "permalink") val permalink: String,
     @ColumnInfo(name = "voteCount") val voteCount: Int,

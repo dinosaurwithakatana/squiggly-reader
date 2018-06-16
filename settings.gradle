@@ -1,1 +1,1 @@
-include ':app', ':squigglydb', ':TildesServices'
+include ':app', ':squigglydb', ':TildesServices', ':squigglydata'
