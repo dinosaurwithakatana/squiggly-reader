@@ -26,5 +26,19 @@ android {
 dependencies {
   implementation project(':squiggly-db')
   implementation project(':tildes-services')
+
+  implementation deps.dagger.lib
+  kapt deps.dagger.compiler
+
+  implementation deps.kotlin.stdlib
+  implementation deps.kotlin.coroutines.common
+  implementation deps.kotlin.coroutines.jdk
+  implementation deps.kotlin.coroutines.android
+  implementation deps.kotlin.coroutines.rx2
 }
 
+kotlin {
+  experimental {
+    coroutines 'enable'
+  }
+}

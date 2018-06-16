@@ -21,15 +21,22 @@ buildscript {
       ],
       'androidx': [
           'appcompat':'1.0.0-alpha1',
+          'cardview': '1.0.0-alpha3',
+          'constraintLayout': '1.1.2',
           'lifecycle': '2.0.0-alpha1',
           'navigation': '1.0.0-alpha02',
           'paging': '2.0.0-alpha1',
+          'recyclerview': '1.0.0-alpha3',
           'room': '2.0.0-alpha1',
           'workManager': '1.0.0-alpha02'
       ],
       'dagger': '2.16',
-      'kotlin': '1.2.50',
+      'kotlin': [
+          'stdlib': '1.2.50',
+          'kotlinCoroutines': '0.23.3'
+      ],
       'moshi': '1.6.0',
+      'okhttp': '3.10.0',
       'threetenabp': '1.1.0',
       'retrofit': '2.4.0'
   ]
@@ -40,6 +47,11 @@ buildscript {
       ],
       'androidx': [
           'appcompat': "androidx.appcompat:appcompat:${versions.androidx.appcompat}",
+          'cardview': "androix.cardview:cardview:${versions.androidx.cardview}",
+          'constraintLayout': [
+              'layout': "androidx.constraintlayout:constraintlayout:${versions.androidx.constraintlayout}",
+              'solver': "androidx.constraintlayout:constraintlayout-solver:${versions.androidx.constraintlayout}"
+          ],
           'navigation': [
               'fragment': "android.arch.navigation:navigation-fragment-ktx:${versions.androidx.navigation}",
               'safeArgs': "android.arch.navigation:navigation-safe-args-gradle-plugin:${versions.androidx.navigation}",
@@ -49,6 +61,7 @@ buildscript {
               'runtime': "androidx.paging:paging-runtime:${versions.paging}",
               'rxjava': "androidx.paging:paging-rxjava2:${versions.paging}"
           ],
+          'recyclerview': "androidx.recyclerview:recyclerview:${versions.recyclerview}",
           'room': [
               'compiler': "androidx.room:room-compiler:${versions.androidx.room}",
               'runtime': "androidx.room:room-runtime:${versions.androidx.room}",
@@ -67,19 +80,30 @@ buildscript {
           'androidProcessor': "com.google.dagger:dagger-android-processor:${versions.dagger}"
       ],
       'kotlin': [
-          'gradlePlugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}",
-          'stdlib': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+          'gradlePlugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin.stdlib}",
+          'stdlib': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin.stdlib}",
+          'coroutines': [
+              'common': "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:${versions.kotlin.kotlinCoroutines}",
+              'jdk': "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlin.kotlinCoroutines}",
+              'android': "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlin.kotlinCoroutines}",
+              'rx2': "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:${versions.kotlin.kotlinCoroutines}"
+          ],
       ],
       'moshi': [
           'lib': "com.squareup.moshi:moshi:${versions.moshi}",
           'kotlinCodegen': "com.squareup.moshi:moshi-kotlin-codegen:${versions.moshi}"
       ],
-      'threetenabp': "com.jakewharton.threetenabp:threetenabp:${versions.threetenabp}",
+      'okhttp': [
+          'client': "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+          'logging': "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+          'mockWebServer': "com.squareup.okhttp3:mockwebserver:${versions.okhttp}",
+      ],
       'retrofit': [
           'lib': "com.squareup.retrofit2:retrofit:${versions.retrofit}",
           'moshi': "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
           'rxjava': "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
-      ]
+      ],
+      'threetenabp': "com.jakewharton.threetenabp:threetenabp:${versions.threetenabp}"
   ]
 
   repositories {
@@ -98,6 +122,8 @@ allprojects {
   repositories {
     google()
     mavenCentral()
+    maven { url "https://kotlin.bintray.com/kotlinx" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     jcenter()
   }
 }

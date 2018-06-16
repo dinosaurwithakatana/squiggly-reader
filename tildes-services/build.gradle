@@ -3,6 +3,7 @@ apply plugin: 'kotlin-kapt'
 
 dependencies {
   compile deps.kotlin.stdlib
+
   compile deps.dagger.lib
   kapt deps.dagger.compiler
 
