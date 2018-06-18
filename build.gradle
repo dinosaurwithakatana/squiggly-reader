@@ -28,9 +28,14 @@ buildscript {
           'paging': '2.0.0-alpha1',
           'recyclerview': '1.0.0-alpha3',
           'room': '2.0.0-alpha1',
+          'test': [
+              'runner': '1.1.0-alpha3',
+              'espressoCore': '3.1.0-alpha3'
+          ],
           'workManager': '1.0.0-alpha02'
       ],
       'dagger': '2.16',
+      'junit': '4.12',
       'kotlin': [
           'stdlib': '1.2.50',
           'kotlinCoroutines': '0.23.3'
@@ -67,6 +72,10 @@ buildscript {
               'runtime': "androidx.room:room-runtime:${versions.androidx.room}",
               'rxjava': "androidx.room:room-rxjava2:${versions.androidx.room}"
           ],
+          'test': [
+              'runner': "androidx.test:runner:${versions.androidx.test.runner}",
+              'espressoCore': "androidx.test.espresso:espresso-core:${versions.androidx.test.espressoCore}"
+          ],
           'viewModel': [
               'compiler': "androidx.lifecycle:lifecycle-compiler:${versions.androidx.lifecycle}",
               'extensions': "androidx.lifecycle:lifecycle-extensions:${versions.androidx.lifecycle}"
@@ -79,6 +88,7 @@ buildscript {
           'android': "com.google.dagger:dagger-android-support:${versions.dagger}",
           'androidProcessor': "com.google.dagger:dagger-android-processor:${versions.dagger}"
       ],
+      'junit': "junit:junit:${versions.junit}",
       'kotlin': [
           'gradlePlugin': "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin.stdlib}",
           'stdlib': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin.stdlib}",

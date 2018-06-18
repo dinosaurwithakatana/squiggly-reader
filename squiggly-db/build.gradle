@@ -41,7 +41,7 @@ dependencies {
 
   implementation deps.threetenabp
 
-  testImplementation 'junit:junit:4.12'
-  androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
-  androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
+  testImplementation deps.junit
+  androidTestImplementation deps.androidx.test.runner
+  androidTestImplementation deps.androidx.test.espressoCore
 }
