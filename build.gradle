@@ -43,7 +43,9 @@ buildscript {
       'moshi': '1.6.0',
       'okhttp': '3.10.0',
       'threetenabp': '1.1.0',
-      'retrofit': '2.4.0'
+      'timber': '4.7.0',
+      'retrofit': '2.4.0',
+      'retrofitCoroutines': '1.0.0'
   ]
 
   ext.deps = [
@@ -111,9 +113,11 @@ buildscript {
       'retrofit': [
           'lib': "com.squareup.retrofit2:retrofit:${versions.retrofit}",
           'moshi': "com.squareup.retrofit2:converter-moshi:${versions.retrofit}",
-          'rxjava': "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
+          'rxjava': "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
+          'coroutines': "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:${versions.retrofitCoroutines}"
       ],
-      'threetenabp': "com.jakewharton.threetenabp:threetenabp:${versions.threetenabp}"
+      'threetenabp': "com.jakewharton.threetenabp:threetenabp:${versions.threetenabp}",
+      'timber': "com.jakewharton.timber:timber:${versions.timber}"
   ]
 
   repositories {

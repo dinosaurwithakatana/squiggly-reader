@@ -1,1 +1,7 @@
-include ':squiggly-app', ':squiggly-db', ':tildes-services', ':squiggly-data'
+include ':squiggly-app'
+include ':squiggly-common'
+include ':squiggly-db'
+include ':squiggly-data'
+include ':squiggly-modifier'
+include ':tildes-fetcher'
+include ':tildes-services'
