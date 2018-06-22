@@ -24,6 +24,7 @@ android {
 }
 
 dependencies {
+  api project(':api-models')
   api project(':common')
   api project(':db')
   api project(':db-models')

@@ -26,6 +26,8 @@ dependencies {
   implementation project (':common')
   implementation project (':ui-models')
   implementation project (':db')
+  implementation project (':db-models')
+  implementation project (':model-transformer')
   implementation deps.kotlin.stdlib
 
   implementation deps.dagger.lib
