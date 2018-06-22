@@ -37,13 +37,27 @@ dependencies {
   implementation deps.androidx.viewModel.extensions
 
   implementation deps.kotlin.stdlib
+  implementation deps.kotlin.coroutines.common
+  implementation deps.kotlin.coroutines.jdk
+  implementation deps.kotlin.coroutines.android
+  implementation deps.kotlin.coroutines.rx2
 
   implementation deps.dagger.lib
   kapt deps.dagger.compiler
   implementation deps.dagger.android
   kapt deps.dagger.androidProcessor
 
+  implementation deps.threetenabp
+  
+  implementation deps.timber
+
   testImplementation deps.junit
   androidTestImplementation deps.androidx.test.runner
   androidTestImplementation deps.androidx.test.espressoCore
+}
+
+kotlin {
+  experimental {
+    coroutines 'enable'
+  }
 }
