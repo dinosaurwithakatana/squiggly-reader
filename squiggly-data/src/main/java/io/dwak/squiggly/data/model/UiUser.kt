@@ -1,4 +1,6 @@
 package io.dwak.squiggly.data.model
 
-class UiUser {
+import io.dwak.squiggly.common.interfaces.model.UiModel
+
+class UiUser: UiModel {
 }

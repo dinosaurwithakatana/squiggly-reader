@@ -24,8 +24,11 @@ android {
 }
 
 dependencies {
-  implementation project(':squiggly-db')
-  implementation project(':tildes-services')
+  api project(':squiggly-common')
+  api project(':squiggly-db')
+  api project(':squiggly-modifier')
+  api project(':tildes-fetcher')
+  api project(':tildes-services')
 
   implementation deps.dagger.lib
   kapt deps.dagger.compiler
@@ -35,6 +38,8 @@ dependencies {
   implementation deps.kotlin.coroutines.jdk
   implementation deps.kotlin.coroutines.android
   implementation deps.kotlin.coroutines.rx2
+
+  implementation deps.threetenabp
 }
 
 kotlin {

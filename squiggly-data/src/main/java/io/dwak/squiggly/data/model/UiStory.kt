@@ -1,4 +1,6 @@
 package io.dwak.squiggly.data.model
 
-class UiStory {
+import io.dwak.squiggly.common.interfaces.model.UiModel
+
+class UiStory : UiModel {
 }
