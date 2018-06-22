@@ -1,5 +1,5 @@
 include ':api-models'
-include ':app'
+include ':ui'
 include ':common'
 include ':db'
 include ':db-models'
