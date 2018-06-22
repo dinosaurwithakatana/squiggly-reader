@@ -1,4 +1,6 @@
 package io.dwak.squiggly.services.model
 
-class ApiUser {
+import io.dwak.squiggly.common.interfaces.model.ApiModel
+
+class ApiUser: ApiModel {
 }
