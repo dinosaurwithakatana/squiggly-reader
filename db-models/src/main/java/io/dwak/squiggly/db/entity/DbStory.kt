@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import io.dwak.squiggly.common.interfaces.model.DbModel
 import org.threeten.bp.Instant
 
 @Entity(
@@ -24,4 +25,4 @@ data class DbStory(
     @ColumnInfo(name = "vote_count") val voteCount: Int,
     @ColumnInfo(name = "link") val link: String? = null,
     @ColumnInfo(name = "content") val content: CharSequence? = null
-)
+): DbModel

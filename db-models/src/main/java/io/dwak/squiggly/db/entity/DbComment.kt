@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import io.dwak.squiggly.common.interfaces.model.DbModel
 import org.threeten.bp.Instant
 
 @Entity(
@@ -31,4 +32,4 @@ data class DbComment(
     @ColumnInfo(name = "voteCount") val voteCount: Int,
     @ColumnInfo(name = "parentId") val parentId: String? = null,
     @ColumnInfo(name = "content") val content: CharSequence
-)
+): DbModel
