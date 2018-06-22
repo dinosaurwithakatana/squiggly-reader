@@ -1,0 +1,8 @@
+apply plugin: 'kotlin'
+
+dependencies {
+  implementation deps.kotlin.stdlib
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
