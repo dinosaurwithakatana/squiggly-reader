@@ -13,6 +13,11 @@ android {
 
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+      }
+    }
   }
 
   buildTypes {
@@ -24,28 +29,18 @@ android {
 }
 
 dependencies {
-  api project(':common')
-  api project(':db')
-  api project(':db-models')
-  api project(':modifier')
-  api project(':fetcher')
-  api project(':services')
-  api project(':ui-models')
+  implementation project(':common')
 
-  implementation deps.dagger.lib
-  kapt deps.dagger.compiler
+  implementation deps.androidx.appcompat
+  implementation deps.androidx.room.runtime
+  implementation deps.androidx.room.rxjava
+  kapt deps.androidx.room.compiler
 
   implementation deps.kotlin.stdlib
-  implementation deps.kotlin.coroutines.common
-  implementation deps.kotlin.coroutines.jdk
-  implementation deps.kotlin.coroutines.android
-  implementation deps.kotlin.coroutines.rx2
 
   implementation deps.threetenabp
-}
 
-kotlin {
-  experimental {
-    coroutines 'enable'
-  }
+  testImplementation deps.junit
+  androidTestImplementation deps.androidx.test.runner
+  androidTestImplementation deps.androidx.test.espressoCore
 }

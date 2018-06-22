@@ -1,7 +1,6 @@
 package io.dwak.squiggly.services
 
-import io.dwak.squiggly.services.model.ApiComment
-import io.reactivex.Flowable
+import io.dwak.squiggly.model.ApiComment
 import kotlinx.coroutines.experimental.Deferred
 
 interface CommentService {

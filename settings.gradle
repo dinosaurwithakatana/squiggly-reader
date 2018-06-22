@@ -1,6 +1,8 @@
+include ':api-models'
 include ':app'
 include ':common'
 include ':db'
+include ':db-models'
 include ':repos'
 include ':modifier'
 include ':ui-models'

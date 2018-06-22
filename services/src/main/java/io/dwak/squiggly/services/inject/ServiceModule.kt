@@ -3,11 +3,9 @@ package io.dwak.squiggly.services.inject
 import dagger.Module
 import dagger.Provides
 import io.dwak.squiggly.services.CommentService
-import io.dwak.squiggly.services.model.ApiComment
-import io.reactivex.Flowable
+import io.dwak.squiggly.model.ApiComment
 import kotlinx.coroutines.experimental.Deferred
 import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.defer
 
 @Module
 class ServiceModule {

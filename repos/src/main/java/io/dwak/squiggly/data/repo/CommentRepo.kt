@@ -1,7 +1,7 @@
 package io.dwak.squiggly.data.repo
 
-import io.dwak.squiggly.data.model.UiComment
 import io.dwak.squiggly.db.dao.CommentDao
+import io.dwak.squiggly.model.UiComment
 import io.dwak.squiggly.services.CommentService
 import kotlinx.coroutines.experimental.launch
 import javax.inject.Inject

@@ -1,5 +1,5 @@
 package io.dwak.squiggly.modifier
 
 interface Modifier {
-  fun submit(mod: Modifications)
+  fun submit(mod: Modification)
 }

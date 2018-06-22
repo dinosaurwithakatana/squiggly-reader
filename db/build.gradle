@@ -30,6 +30,7 @@ android {
 
 dependencies {
   implementation project(':common')
+  implementation project(':db-models')
 
   implementation deps.androidx.appcompat
   implementation deps.androidx.room.runtime

@@ -1,8 +1,8 @@
 package io.dwak.squigglyreader
 
 import androidx.lifecycle.MutableLiveData
-import io.dwak.squiggly.data.model.UiComment
 import io.dwak.squiggly.data.repo.CommentRepo
+import io.dwak.squiggly.model.UiComment
 import io.dwak.squigglyreader.util.MutableDelgate
 import kotlinx.coroutines.experimental.launch
 import javax.inject.Inject

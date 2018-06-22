@@ -4,7 +4,7 @@ import javax.inject.Inject
 
 class SquigglyModifier @Inject constructor()
   : Modifier {
-  override fun submit(mod: Modifications) {
+  override fun submit(mod: Modification) {
     TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 }
