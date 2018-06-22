@@ -1,3 +1,3 @@
 package io.dwak.squiggly.common.interfaces.model
 
-interface ApiModel: Model
+interface ApiModel
