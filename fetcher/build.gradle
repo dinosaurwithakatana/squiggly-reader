@@ -3,7 +3,7 @@ apply plugin: 'kotlin-kapt'
 
 dependencies {
   implementation project (':common')
-  implementation project (':services')
+  implementation project (':api')
   implementation deps.kotlin.stdlib
 
   implementation deps.dagger.lib

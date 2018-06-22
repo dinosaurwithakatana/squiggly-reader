@@ -30,7 +30,7 @@ dependencies {
   api project(':db-models')
   api project(':modifier')
   api project(':fetcher')
-  api project(':services')
+  api project(':api')
   api project(':ui-models')
 
   implementation deps.dagger.lib

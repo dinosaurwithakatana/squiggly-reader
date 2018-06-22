@@ -27,7 +27,7 @@ dependencies {
   implementation project (':db')
   implementation project (':db-models')
   implementation project (':api-models')
-  implementation project (':services')
+  implementation project (':api')
 
   implementation deps.kotlin.stdlib
 
