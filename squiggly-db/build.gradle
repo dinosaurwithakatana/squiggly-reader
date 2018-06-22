@@ -29,6 +29,8 @@ android {
 }
 
 dependencies {
+  implementation project(':squiggly-common')
+
   implementation deps.androidx.appcompat
   implementation deps.androidx.room.runtime
   implementation deps.androidx.room.rxjava
