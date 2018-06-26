@@ -13,7 +13,7 @@ import io.dwak.squiggly.db.entity.DbUser
 @TypeConverters(io.dwak.squiggly.db.converters.TypeConverters::class)
 @Database(
     entities = [DbComment::class, DbStory::class, DbUser::class],
-    version = 2
+    version = 3
 )
 abstract class SquigglyDb : RoomDatabase() {
   abstract fun storyDao(): StoryDao

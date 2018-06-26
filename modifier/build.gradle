@@ -22,17 +22,30 @@ android {
   }
 }
 
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
 dependencies {
   implementation project (':common')
   implementation project (':ui-models')
   implementation project (':db')
   implementation project (':db-models')
   implementation project (':model-transformer')
+
   implementation deps.kotlin.stdlib
+  implementation deps.kotlin.coroutines.common
+  implementation deps.kotlin.coroutines.jdk
+  implementation deps.kotlin.coroutines.android
+  implementation deps.kotlin.coroutines.rx2
 
   implementation deps.dagger.lib
   kapt deps.dagger.compiler
+
+  implementation deps.threetenabp
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+kotlin {
+  experimental {
+    coroutines 'enable'
+  }
+}

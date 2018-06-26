@@ -6,10 +6,11 @@ import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import io.dwak.squiggly.db.SquigglyDb
+import javax.inject.Singleton
 
 @Module
 class DbModule {
-  @Provides
+  @Provides @Singleton
   fun providesDb(context: Context) = Room.databaseBuilder(context, SquigglyDb::class.java, "Squiggly")
       .fallbackToDestructiveMigration()
       .apply { if (Debug.isDebuggerConnected()) allowMainThreadQueries() }

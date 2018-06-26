@@ -26,6 +26,9 @@ dependencies {
 
   implementation deps.androidx.appcompat
 
+  implementation deps.butterknife.lib
+  kapt deps.butterknife.compiler
+
   implementation deps.androidx.navigation.fragment
   implementation deps.androidx.navigation.ui
 
@@ -47,6 +50,7 @@ dependencies {
   implementation deps.dagger.android
   kapt deps.dagger.androidProcessor
 
+  implementation deps.stetho
   implementation deps.threetenabp
   
   implementation deps.timber

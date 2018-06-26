@@ -1,9 +1,11 @@
 package io.dwak.squigglyreader
 
-import android.app.Activity
-import androidx.lifecycle.ViewModel
+import android.os.Bundle
+import butterknife.ButterKnife
 import dagger.android.support.DaggerAppCompatActivity
-import kotlin.reflect.KProperty
 
-class BaseActivity : DaggerAppCompatActivity(){
+abstract class BaseActivity : DaggerAppCompatActivity(){
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+  }
 }

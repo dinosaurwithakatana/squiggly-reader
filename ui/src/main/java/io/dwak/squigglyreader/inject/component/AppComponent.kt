@@ -10,7 +10,9 @@ import io.dwak.squigglyreader.SquigglyReaderApplication
 import io.dwak.squigglyreader.inject.module.ActivityModule
 import io.dwak.squigglyreader.inject.module.AppModule
 import io.dwak.squigglyreader.inject.module.CoroutineModule
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [
   ActivityModule::class,
   AndroidSupportInjectionModule::class,

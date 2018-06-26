@@ -8,6 +8,7 @@ import org.threeten.bp.Instant
 
 @Entity(tableName = "user")
 data class DbUser(
-    @PrimaryKey @ColumnInfo(name = "username") val username: String,
+    @PrimaryKey val id: String,
+    @ColumnInfo(name = "username") val username: String,
     @ColumnInfo(name = "registeredDate") val registeredDate: Instant
 ): DbModel

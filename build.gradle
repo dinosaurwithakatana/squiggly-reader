@@ -17,7 +17,7 @@ buildscript {
 
   ext.versions = [
       'android': [
-          'gradlePlugin': "3.2.0-alpha18"
+          'gradlePlugin': "3.2.0-beta01"
       ],
       'androidx': [
           'appcompat':'1.0.0-alpha1',
@@ -34,6 +34,7 @@ buildscript {
           ],
           'workManager': '1.0.0-alpha02'
       ],
+      'butterknife': '9.0.0-SNAPSHOT',
       'dagger': '2.16',
       'junit': '4.12',
       'kotlin': [
@@ -42,6 +43,7 @@ buildscript {
       ],
       'moshi': '1.6.0',
       'okhttp': '3.10.0',
+      'stetho': '1.5.0',
       'threetenabp': '1.1.0',
       'timber': '4.7.0',
       'retrofit': '2.4.0',
@@ -50,6 +52,7 @@ buildscript {
 
   ext.deps = [
       'android': [
+          'dataBindingCompiler': "com.android.databinding:compiler:${versions.android.gradlePlugin}",
           'gradlePlugin': "com.android.tools.build:gradle:${versions.android.gradlePlugin}"
       ],
       'androidx': [
@@ -84,6 +87,10 @@ buildscript {
           ],
           'workManager': "android.arch.work:work-runtime-ktx:${versions.workManager}"
       ],
+      'butterknife': [
+          'lib': "com.jakewharton:butterknife:${versions.butterknife}",
+          'compiler': "com.jakewharton:butterknife-compiler:${versions.butterknife}"
+      ],
       'dagger': [
           'lib': "com.google.dagger:dagger:${versions.dagger}",
           'compiler': "com.google.dagger:dagger-compiler:${versions.dagger}",
@@ -116,6 +123,7 @@ buildscript {
           'rxjava': "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
           'coroutines': "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:${versions.retrofitCoroutines}"
       ],
+      'stetho': "com.facebook.stetho:stetho:${versions.stetho}",
       'threetenabp': "com.jakewharton.threetenabp:threetenabp:${versions.threetenabp}",
       'timber': "com.jakewharton.timber:timber:${versions.timber}"
   ]

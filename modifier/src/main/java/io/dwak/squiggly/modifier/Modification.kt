@@ -1,7 +1,9 @@
 package io.dwak.squiggly.modifier
 
+import io.dwak.squiggly.common.newId
 import io.dwak.squiggly.model.UiComment
 import io.dwak.squiggly.model.UiStory
+import io.dwak.squiggly.model.UiUser
 
 sealed class Modification {
   data class SubmitStory(val uiStory: UiStory) : Modification()
@@ -15,4 +17,6 @@ sealed class Modification {
       ) : Modification()
 
   data class VoteOnComment(val commentId: String, val increment: Boolean = true) : Modification()
+
+  data class CreateUser(val user: UiUser): Modification()
 }

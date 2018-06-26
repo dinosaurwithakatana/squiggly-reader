@@ -12,7 +12,7 @@ import org.threeten.bp.Instant
     foreignKeys = [
       ForeignKey(
           entity = DbUser::class,
-          parentColumns = ["username"],
+          parentColumns = ["id"],
           childColumns = ["original_poster"]
       )
     ]
