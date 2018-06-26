@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProviders
 import butterknife.BindView
 import butterknife.ButterKnife
 import dagger.android.support.DaggerAppCompatActivity
+import kotlinx.coroutines.experimental.launch
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -28,10 +29,19 @@ class MainActivity : BaseActivity() {
       Timber.d("$it")
     })
 
+    viewModel.story.observe {
+      Timber.d("$it")
+    }
+
     viewModel.requestComment()
 
+    val storyId = "0dec1ba9-e133-4e8d-99da-6fa016bf4bb6"
+    launch {
+      viewModel.requestStory(storyId)
+    }
+
     test.setOnClickListener {
-      viewModel.vote()
+      viewModel.upvote(storyId)
     }
   }
 }

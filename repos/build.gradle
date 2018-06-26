@@ -29,6 +29,7 @@ dependencies {
   api project(':db')
   api project(':db-models')
   api project(':modifier')
+  implementation project(':model-transformer')
   api project(':fetcher')
   api project(':api')
   api project(':ui-models')

@@ -6,7 +6,8 @@ import io.dwak.squiggly.common.newId
 data class UiStory (
     val id: String = newId(),
     val link: String? = null,
-    val content: String? = null,
+    val content: CharSequence? = null,
     val group: String,
-    val author: UiUser
+    val author: UiUser,
+    val voteCount: Int
 ) : UiModel

@@ -23,6 +23,5 @@ import javax.inject.Singleton
   RepoModule::class
 ])
 interface AppComponent : AndroidInjector<SquigglyReaderApplication> {
-  @Component.Builder
-  abstract class Builder : AndroidInjector.Builder<SquigglyReaderApplication>()
+  @Component.Builder abstract class Builder : AndroidInjector.Builder<SquigglyReaderApplication>()
 }

@@ -14,9 +14,10 @@ object UserTransformer: Transformer<ApiUser, DbUser, UiUser> {
     TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
-  override fun DbUser.transformToUi(): UiUser {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-  }
+  override fun DbUser.transformToUi() = UiUser(
+      id = id,
+      name = username
+  )
 
   override fun UiUser.transformToDb() = DbUser(
       id = id,
