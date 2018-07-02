@@ -8,6 +8,8 @@ import androidx.preference.PreferenceDataStore
 import androidx.preference.PreferenceManager
 import butterknife.BindView
 import butterknife.ButterKnife
+import kotlinx.coroutines.experimental.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
@@ -24,6 +26,9 @@ class MainActivity : BaseActivity() {
 
     viewModel = ViewModelProviders.of(this, factory)[MainViewModel::class.java]
 
-    prefDataStore.putBoolean("foo", true)
+    launch {
+      prefDataStore.putBoolean("foo", true)
+      Timber.d("prefs: ${prefDataStore.getBoolean("foo", false)}")
+    }
   }
 }
