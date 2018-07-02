@@ -5,4 +5,5 @@ import kotlinx.coroutines.experimental.Deferred
 
 interface CommentService {
   fun getComment(commentId: String): Deferred<ApiComment>
+  fun postComment(comment: ApiComment): Deferred<Unit>
 }

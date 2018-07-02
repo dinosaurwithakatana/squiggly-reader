@@ -17,7 +17,7 @@ buildscript {
 
   ext.versions = [
       'android': [
-          'gradlePlugin': "3.2.0-beta01"
+          'gradlePlugin': "3.2.0-beta02"
       ],
       'androidx': [
           'appcompat':'1.0.0-alpha1',
@@ -26,6 +26,7 @@ buildscript {
           'lifecycle': '2.0.0-alpha1',
           'navigation': '1.0.0-alpha02',
           'paging': '2.0.0-alpha1',
+          'preference': '1.0.0-alpha1',
           'recyclerview': '1.0.0-alpha3',
           'room': '2.0.0-alpha1',
           'test': [
@@ -68,10 +69,11 @@ buildscript {
               'ui': "android.arch.navigation:navigation-ui-ktx:${versions.androidx.navigation}"
           ],
           'paging': [
-              'runtime': "androidx.paging:paging-runtime:${versions.paging}",
-              'rxjava': "androidx.paging:paging-rxjava2:${versions.paging}"
+              'runtime': "androidx.paging:paging-runtime:${versions.androidx.paging}",
+              'rxjava': "androidx.paging:paging-rxjava2:${versions.androidx.paging}"
           ],
-          'recyclerview': "androidx.recyclerview:recyclerview:${versions.recyclerview}",
+          'preference': "androidx.preference:preference:${versions.androidx.preference}",
+          'recyclerview': "androidx.recyclerview:recyclerview:${versions.androidx.recyclerview}",
           'room': [
               'compiler': "androidx.room:room-compiler:${versions.androidx.room}",
               'runtime': "androidx.room:room-runtime:${versions.androidx.room}",

@@ -22,7 +22,11 @@ android {
 }
 
 dependencies {
+  implementation project(':fetcher')
+  implementation project(':modifier')
   implementation project(':repos')
+  implementation project(':prefs')
+  implementation project(':uploader')
 
   implementation deps.androidx.appcompat
 

@@ -1,6 +1,7 @@
 package io.dwak.squigglyreader
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import butterknife.ButterKnife
@@ -18,4 +19,6 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
       }
     })
   }
+
+  fun CharSequence.toast() = Toast.makeText(this@BaseActivity, this, Toast.LENGTH_SHORT).show()
 }

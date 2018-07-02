@@ -8,7 +8,7 @@ class CommentModifier @Inject constructor(private val commentDao: CommentDao) : 
   override fun submit(mod: Modification) {
     when (mod) {
       is Modification.SubmitComment -> {
-        commentDao.insertComment(mod.uiComment.transformToDb())
+        commentDao.insert(mod.uiComment.transformToDb())
       }
       is Modification.VoteOnComment -> {
       }

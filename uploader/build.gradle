@@ -23,17 +23,31 @@ android {
 }
 
 dependencies {
+  implementation project (':api-models')
+  implementation project (':api')
   implementation project (':common')
   implementation project (':db')
   implementation project (':db-models')
-  implementation project (':api-models')
-  implementation project (':api')
+  implementation project (':model-transformer')
 
   implementation deps.kotlin.stdlib
+  implementation deps.kotlin.coroutines.common
+  implementation deps.kotlin.coroutines.jdk
+  implementation deps.kotlin.coroutines.android
+  implementation deps.kotlin.coroutines.rx2
 
   implementation deps.dagger.lib
   kapt deps.dagger.compiler
+
+  implementation deps.timber
 }
 
 sourceCompatibility = "7"
 targetCompatibility = "7"
+
+kotlin {
+  experimental {
+    coroutines 'enable'
+  }
+}
+

@@ -11,6 +11,10 @@ import kotlinx.coroutines.experimental.async
 class ServiceModule {
   @Provides
   fun commentService() = object : CommentService {
+    override fun postComment(comment: ApiComment): Deferred<Unit> {
+      TODO()
+    }
+
     override fun getComment(commentId: String): Deferred<ApiComment> = async {
       ApiComment("meow", "i'm a cat")
     }

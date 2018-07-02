@@ -11,7 +11,7 @@ class UserModifier @Inject constructor(private val userDao: UserDao): Modifier {
   override fun submit(mod: Modification) {
     when (mod) {
       is Modification.CreateUser -> {
-        launch { userDao.insertUser(mod.user.transformToDb()) }
+        launch { userDao.insert(mod.user.transformToDb()) }
       }
       else -> error("not handled here")
     }

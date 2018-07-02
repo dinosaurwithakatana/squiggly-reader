@@ -1,6 +1,5 @@
 package io.dwak.squiggly.modifier
 
-import io.dwak.squiggly.common.newId
 import io.dwak.squiggly.model.UiComment
 import io.dwak.squiggly.model.UiStory
 import io.dwak.squiggly.model.UiUser

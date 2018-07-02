@@ -1,20 +1,24 @@
 package io.dwak.squiggly.db.dao
 
 import androidx.room.*
+import io.dwak.squiggly.common.interfaces.SquigglyDao
 import io.dwak.squiggly.db.entity.DbComment
 import io.reactivex.Flowable
 
 @Dao
-interface CommentDao {
+interface CommentDao : SquigglyDao<DbComment> {
   @Query("SELECT * FROM comment WHERE storyId LIKE :storyId")
   fun findCommentsForStory(storyId: String): Flowable<List<DbComment>>
 
-  @Query("SELECT * FROM comment WHERE id LIKE :commentId")
-  fun findCommentById(commentId: String): Flowable<DbComment>
+  @Query("SELECT * FROM comment WHERE storyId LIKE :id")
+  override fun get(id: String): DbComment?
 
-  @Insert fun insertComment(comment: DbComment)
+  @Insert
+  override fun insert(model: DbComment)
 
-  @Update fun updateComment(vararg comments: DbComment)
+  @Update
+  override fun update(model: DbComment)
 
-  @Delete fun deleteComment(vararg comments: DbComment)
+  @Delete
+  override fun delete(model: DbComment)
 }

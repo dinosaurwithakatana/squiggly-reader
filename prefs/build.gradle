@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+  compileSdkVersion buildConfig.compileSdk
+
+  defaultConfig {
+    minSdkVersion buildConfig.minSdk
+    targetSdkVersion buildConfig.targetSdk
+    versionCode buildConfig.version.code
+    versionName buildConfig.version.name
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+      }
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  implementation project(':common')
+
+  implementation deps.androidx.appcompat
+  api deps.androidx.preference
+  implementation deps.androidx.room.runtime
+  implementation deps.androidx.room.rxjava
+  kapt deps.androidx.room.compiler
+
+  implementation deps.dagger.lib
+  kapt deps.dagger.compiler
+
+  implementation deps.kotlin.stdlib
+
+  implementation deps.threetenabp
+
+  testImplementation deps.junit
+  androidTestImplementation deps.androidx.test.runner
+  androidTestImplementation deps.androidx.test.espressoCore
+}
